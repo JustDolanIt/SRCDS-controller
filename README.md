@@ -2,7 +2,15 @@
 
 Script for SRCDS (Source Dedicated Server) basic administration.
 
-Commands:
+### Usage:
+
+Install all varables inside script for your system, then call script. Then you'll get Usage infomation.
+
+_Example of usage_:
+
+    ./serverController.sh start
+
+### Commands:
 
   * Start server (start)
   * Stop server (stop)
