@@ -24,10 +24,6 @@ case "$1" in
             echo $2 $3 | cat > status
             echo "Server started"
           fi;;
-  stop )  
-          screen -S $SESSION_NAME -p 0 -X stuff "quit $(printf \\r)" # Screen sends command. 'stuff' with X - choosing buffer for command you send. printf sends Enter to the end of string (PS works time to time)
-          rm status
-          echo "Server stopped" ;;
   changemap )
           if [ `ps u | grep srcds | grep -v grep | awk -F ' ' '{print $2}' | head -n1` ];
           then
@@ -66,6 +62,6 @@ case "$1" in
             echo $PIDAL
           done;;
   * ) 
-          echo; echo "Usage:"; echo; echo "  start <MAP> <MODE> - start server with MAP and MODE."; echo "  stop - stops server."; echo "  changemap <MAP> - changes current map"; echo "  changemode <MODE> - changes current gamemode"; echo "  kill - kills server processes."; echo "  status - get status of server."; echo "  pids - get pids of server and screen"; echo;;
+          echo; echo "Usage:"; echo; echo "  start <MAP> <MODE> - start server with MAP and MODE."; echo "  changemap <MAP> - changes current map"; echo "  changemode <MODE> - changes current gamemode"; echo "  kill - kills server processes."; echo "  status - get status of server."; echo "  pids - get pids of server and screen"; echo;;
 esac
 
